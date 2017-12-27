@@ -1,0 +1,7 @@
+---
+galaxy_info:
+  author: Emptyhammock Software and Services LLC
+  description: Subset of Emptyhammock deployment
+  license: Apache 2.0
+  min_ansible_version: 2.4
+dependencies: []
