@@ -20,9 +20,12 @@
 
 - name: Add the logging group
   group: name={{ log_group }} state=present
+  when: log_group is defined
 
 - name: Add managing user to logging group
   user: name={{ project_user }} groups={{log_group}} append=yes
+  when: log_group is defined
 
 - name: Add daemon user to logging group
   user: name={{ log_dir_owner }} groups={{log_group}} append=yes
+  when: log_dir_owner is defined
