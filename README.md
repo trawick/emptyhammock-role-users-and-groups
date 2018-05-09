@@ -40,6 +40,10 @@ users:
       - ssh-rsa 22334455...
 ```
 
+Once this role is executed, no user will be able to log in with a password over
+ssh, and `root` won't be able to login over ssh at all.  Thus you should test
+your `users` setting on a test system before deploying to production. 
+
 #### `project_user`
 
 Username associated with the project, not able to ssh into the system; typically

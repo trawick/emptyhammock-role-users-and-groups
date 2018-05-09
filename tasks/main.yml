@@ -29,3 +29,17 @@
 - name: Add daemon user to logging group
   user: name={{ log_dir_owner }} groups={{log_group}} append=yes
   when: log_dir_owner is defined
+
+- name: Don't allow root to log in via ssh
+  lineinfile:
+    dest=/etc/ssh/sshd_config
+    regexp="^#?PermitRootLogin"
+    line="PermitRootLogin no"
+  notify: restart sshd
+
+- name: Don't allow password-based authentication via ssh
+  lineinfile:
+    dest=/etc/ssh/sshd_config
+    regexp="^#?PasswordAuthentication"
+    line="PasswordAuthentication no"
+  notify: restart sshd
