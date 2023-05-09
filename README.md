@@ -3,15 +3,15 @@
 This is an Ansible role that, in conjunction with a number of other Emptyhammock
 roles, handles provisioning and deployment of Django applications.
 
-It is oriented closely to Emptyhammock projects, but you may find some useful
-snippets here.
+I use this role in some non-Django projects as well, as it serves a more generic
+purpose.  Specifically:
 
 This role
 
 * sets up developer users on the system so that they can log in via ssh and
-  use `sudo`
-* create project user, with a home directory
-* optionally create a logging group and add the project user and optional
+  use `sudo` (i.e., deploy to the system or log in for troubleshooting)
+* creates a project user, with a home directory
+* optionally creates a logging group and adds the project user and optional
   log directory owner to that group
 
 ## Usage
@@ -42,7 +42,8 @@ users:
 
 Once this role is executed, no user will be able to log in with a password over
 ssh, and `root` won't be able to login over ssh at all.  Thus you should test
-your `users` setting on a test system before deploying to production. 
+your `users` setting on a test system before deploying to production.  Also,
+double-check using your cloud (or physical) console for logging in as root.
 
 #### `project_user`
 
