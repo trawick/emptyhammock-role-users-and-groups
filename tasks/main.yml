@@ -18,6 +18,12 @@
 - name: Create project user
   user: name={{ project_user }} comment="{{ project_name }} user" createhome=yes state=present
 
+- name: Fix permissions of project user home dir if needed (accessed by remote_manage.sh)
+  file:
+    path: "/home/{{ project_user }}"
+    state: touch
+    mode: 0755
+
 - name: Add the logging group
   group: name={{ log_group }} state=present
   when: log_group is defined

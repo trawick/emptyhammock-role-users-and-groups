@@ -1,5 +1,9 @@
 # Changes and migration requirements
 
+## Version 0.0.4
+
+* Adjust permissions on home directory of project user.
+
 ## Version 0.0.3
 
 * sshd: Root login as well as password authentication will be disabled.
