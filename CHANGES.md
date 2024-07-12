@@ -1,5 +1,9 @@
 # Changes and migration requirements
 
+## Version 0.0.5
+
+* Fix problem restarting sshd on Ubuntu 24.
+
 ## Version 0.0.4
 
 * Adjust permissions on home directory of project user.
